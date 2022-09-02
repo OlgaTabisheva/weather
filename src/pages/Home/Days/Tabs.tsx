@@ -1,9 +1,14 @@
-
 import React from 'react';
 
 import s from './Days.module.scss';
 
-interface Props {}
+interface Props {
+}
+
+export interface Tabs {
+    value: string;
+}
+
 
 export const Tabs = (props: Props) => {
     const tabs = [
