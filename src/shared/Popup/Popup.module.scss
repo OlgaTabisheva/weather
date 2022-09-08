@@ -1,0 +1,24 @@
+@import './../../styles/variable';
+
+.popup {
+  position: absolute;
+  top: 50%;
+  left: calc(50% - 325px);
+  z-index: 1001;
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  padding: 40px;
+  max-width: 750px;
+  width: 100%;
+  background: $lite-background;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+}
+.blur{
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.25);
+}
