@@ -22,3 +22,42 @@
   height: 100vh;
   background: rgba(0,0,0,0.25);
 }
+
+.close{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  svg{
+    transition: 0.3s;
+  }
+  &:hover{
+    svg{
+      transform: rotate(360deg);
+    }
+  }
+}
+.day{
+  .day__temp{
+    font-weight: 500;
+    font-size: 60px;
+    color: $primary-color;
+  }
+  .day__name{
+    font-size: 25px;
+    line-height: 30px;
+    color: #000000;
+    margin-bottom: 12px;
+  }
+  .img{
+    svg {
+      width: 53px;
+      height: 53px;
+    }
+    margin-bottom: 12px;
+  }
+  .day__time,
+  .day__city{
+    font-size: 15px;
+    color: $base-color;
+  }
+}
