@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import Select from "react-select";
 import s from './Header.module.scss'
 import {GlobalSvgSelector} from "../../assets/icons/global/GlobalSvgSelector";
@@ -18,15 +18,35 @@ export const Header = (props: Props) => {
         control: (styles: any) => (
             {
                 ...styles,
-                backgroundColor: 'rgba(71,147,255,0.2)',
+                backgroundColor: 0 ? '#4F4F4F' : 'rgba(71, 147, 255, 0.2)',
                 width: '194px',
                 height: '37px',
                 border: 'none',
                 borderRadius: '10px',
                 zIndex: 100,
-            })
+            }),
+        singleValue: (styles: any) => ({
+            ...styles,
+            color: 0 ? '#fff' : '#000',
+        }),
     }
 
+    const[theme,setTheme] = useState('light')
+
+function changeTheme(){
+setTheme(
+    theme ==='light' ? 'dark' :  'light'
+)
+
+
+}
+useEffect(()=>{
+    const root=document.querySelector(':root') as HTMLElement
+    root.style.setProperty(
+        '--body-background-default',
+        `var(--body-background-${theme})`
+    )
+}, [theme])
 
     return <header className={s.header}>
         <div className={s.wrapper}>
@@ -36,7 +56,7 @@ export const Header = (props: Props) => {
             <div className={s.title}>React weather</div>
         </div>
         <div className={s.wrapper}>
-            <div className={s.change_theme}>
+            <div className={s.change_theme} onClick={changeTheme}>
                 <GlobalSvgSelector id={"change-theme"}/>
             </div>
             <Select
