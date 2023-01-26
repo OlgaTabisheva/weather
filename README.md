@@ -1,3 +1,3 @@
-# Getting Started with Create React App
+# Weather
 
 Погода/Сайт погоды/ Обучение/ React Typescript/ планируются доработки - нужно доделать подгрузку данных из вне ( API).
